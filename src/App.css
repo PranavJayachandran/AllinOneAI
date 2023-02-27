@@ -1,3 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap");
+
+.pt-sans-narrow {
+  font-family: "PT Sans Narrow", sans-serif;
+}
+.blob {
+  position: inherit;
+  width: 500px;
+  height: 500px;
+  background: rgb(100, 57, 190);
+  background: linear-gradient(
+    90deg,
+    rgba(100, 57, 190, 1) 0%,
+    rgba(23, 212, 213, 1) 39%,
+    rgba(199, 28, 213, 1) 100%
+  );
+  filter: blur(10px);
+  animation: blob-animation 25s infinite alternate;
+  border-radius: 89% 70% 64% 89%;
+}
+.blob-reflection {
+  margin-top: -20px;
+  background: rgb(100, 57, 190);
+  background: linear-gradient(
+    90deg,
+    rgba(100, 57, 190, 1) 0%,
+    rgba(23, 212, 213, 1) 39%,
+    rgba(199, 28, 213, 1) 100%
+  );
+  border-radius: 100%;
+  filter: blur(4px);
+}
+.banner-bg {
+  background: rgb(100, 57, 190);
+  background: radial-gradient(
+    circle,
+    rgba(100, 57, 190, 1) 0%,
+    rgba(0, 37, 77, 1) 0%,
+    rgba(32, 32, 102, 1) 53%,
+    rgba(81, 43, 151, 1) 98%
+  );
+}
+.image-bg {
+  background: rgb(100, 57, 190);
+  background: linear-gradient(
+    90deg,
+    rgba(100, 57, 190, 1) 0%,
+    rgba(151, 43, 141, 1) 0%,
+    rgba(3, 3, 133, 1) 52%,
+    rgba(151, 43, 141, 1) 100%
+  );
+}
+.loader {
+  margin: auto;
+
+  border-top: 5px solid rgb(96 165 250);
+  border-radius: 50%;
+
+  width: 50px;
+
+  height: 50px;
+
+  animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .App {
   text-align: center;
 }
@@ -34,5 +111,16 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes blob-animation {
+  from {
+    transform: rotate(-80deg);
+    border-radius: 89% 70% 14% 89%;
+  }
+  to {
+    transform: rotate(180deg);
+    border-radius: 89% 70% 64% 89%;
   }
 }
