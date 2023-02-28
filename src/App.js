@@ -6,15 +6,19 @@ import Banner from './components/Banner';
 import ImageGenerator from './components/ImageGenerator';
 import ImageToText from './components/ImageToText';
 import TextCompletion from './components/TextCompletion';
+import Findtheanswer from './components/Findtheanswer';
 
 function App() {
   return (
-    <div className='banner-bg'>
+    <div className='banner-bg overflow-y-hidden'>
       <Navbar />
       <Banner />
       <ImageGenerator />
-      <ImageToText />
+      <Findtheanswer />
       <TextCompletion />
+      <ImageToText />
+
+
     </div>
   );
 }

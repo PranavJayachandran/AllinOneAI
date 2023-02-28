@@ -45,7 +45,7 @@ export default function ImageToText() {
               <div className="loader"></div>
             </div>
           ) : text.length > 0 ? (
-            <div className="my-10 mx-40 bg-white text-black rounded px-8 py-4 ">
+            <div className="my-10 mx-4 sm:mx-40 bg-blue-400 text-black rounded px-8 py-4 ">
               {text}
             </div>
           ) : (

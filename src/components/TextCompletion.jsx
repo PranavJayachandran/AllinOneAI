@@ -29,9 +29,13 @@ export default function TextCompletion() {
       .then((result) => {
         setLoading(0);
         setDoneforMe(result.choices[0].text);
+        console.log(result.choices[0].text.split(" "));
       })
       .catch((error) => console.log("error", error));
   };
+  function replaceWithBr() {
+    return doneforme.replace(/\n/g, "<br />");
+  }
   return (
     <div className="pb-40">
       <div>
@@ -58,8 +62,8 @@ export default function TextCompletion() {
             <div className="loader"></div>
           </div>
         ) : doneforme.length > 0 ? (
-          <div className="mt-10 flex justify-center bg-blue-400 mx-10 rounded-lg px-4 py-2 text-lg">
-            {doneforme}
+          <div className="mt-10 flex justify-center bg-blue-400 mx-4 sm:mx-40 rounded-lg px-4 py-4 text-lg">
+            <p dangerouslySetInnerHTML={{ __html: replaceWithBr() }} />
           </div>
         ) : (
           <></>

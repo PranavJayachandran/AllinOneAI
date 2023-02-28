@@ -41,24 +41,26 @@ export default function ImageGenerator() {
   };
   return (
     <div className="pb-40 pt-20">
-      <div className="text-white text-center px-36 text-4xl font-semibold">
+      <div className="text-white text-center sm:px-36 text-4xl font-semibold">
         IMAGE GENERATOR
       </div>
       <div className="flex flex-col gap-10 items-center justify-center mt-10">
         <div>
           <label className="mr-4 text-white text-2xl">Prompt:</label>
           <input
-            className="h-12 w-[900px] px-6 rounded-xl shadow-2xl"
+            className="h-12 sm:w-[900px] px-6 rounded-xl shadow-2xl"
             value={prompt}
             onChange={handle_prompt_change}
           />
         </div>
-        <div className="">
-          <label className="mr-4 text-white text-2xl">
-            How many pictures do you want? (1 -10)
-          </label>
+        <div className="mx-10 flex">
+          <div className="flex justify-center">
+            <label className="sm:mr-4 sm:text-left  text-center text-white text-2xl">
+              How many pictures do you want?
+            </label>
+          </div>
           <input
-            className="h-12 w-[400px] px-6 rounded-xl shadow-2xl"
+            className="h-12 sm:w-[400px] px-6 rounded-xl shadow-2xl"
             type="number"
             value={number}
             onChange={handle_prompt_number}
